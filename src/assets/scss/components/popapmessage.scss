@@ -1,0 +1,35 @@
+.popup-message {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  background-color: var(--white);
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
+  @media #{$mobile700M} {
+    max-width: 312px;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--lightgrey-bg);
+  }
+
+  .texts {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    gap: 16px;
+    font-size: 12px;
+    font-weight: 500;
+
+    a {
+      font-weight: 800;
+    }
+  }
+}

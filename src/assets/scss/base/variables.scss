@@ -1,0 +1,83 @@
+//media screen size
+$mobile700M: "screen and (max-width: 700px)";
+$notmobile701P: "screen and (min-width: 701px)";
+$tablet909M: "screen and (max-width: 909px)";
+$tablet910P: "screen and (min-width: 910px)";
+$tablet1023M: "screen and (max-width: 1023px)";
+$tablet1099M: "screen and (max-width: 1099px)";
+$laptop1279M: "screen and (max-width: 1279px)";
+$desktop1699M: "screen and (max-width: 1699px)";
+$lg1700P: "screen and (min-width: 1700px)";
+
+:root {
+  --text-primary: #000;
+  --text-violet-black: rgba(28, 27, 31, 1);
+  --text-dark-grey: rgba(117, 117, 117, 1);
+  --text-inactive: rgba(160, 160, 160, 1);
+  --base-bg: #fff;
+  --lightgrey-bg: rgba(239, 239, 239, 1);
+  --color-accent: rgba(232, 28, 35, 1);
+  --text-disabled: rgba(214, 214, 214, 1);
+  --star-inactive: rgba(160, 160, 160, 1);
+  --modal-overlay: rgba(0, 0, 0, 0.4);
+  --linear-grd-ltr-gray: linear-gradient(
+    90deg,
+    rgba(239, 239, 239, 1) 0%,
+    rgba(239, 239, 239, 0) 100%
+  );
+  --linear-grd-ltr-gray-60: linear-gradient(
+    90deg,
+    rgba(239, 239, 239, 1) 0%,
+    rgba(239, 239, 239, 0) 60%
+  );
+  --base-shadow: 0 -2px 20px 0 rgba(0, 0, 0, 0.1);
+  --white: #fff;
+  --black: #000;
+  --base-padding: 72px;
+  --base-small-padding: 48px;
+  --header-height: 80px;
+  --z-header: 10;
+  --z-modal: 11;
+  --z-modal-content: 12;
+  --z-float-product-price: 2;
+  --z-home-catlist: 2;
+  --container: 1920px;
+  --base-tr: 0.3s ease-in-out;
+
+  &.dark-mode {
+    // dark theme
+    // --text-primary: #000;
+    // --base-bg: #fff;
+    // --lightgrey-bg: rgba(239, 239, 239, 1);
+    // --primary: rgba(232, 28, 35, 1);
+  }
+}
+
+@media #{$mobile700M} {
+  :root {
+    --base-padding: 24px;
+    --header-height: 72px;
+    --base-small-padding: var(--base-padding);
+  }
+}
+
+//adaptive
+@function wsm($value) {
+  @return calc(($value * 100vw) / 768);
+}
+@function wxs($value) {
+  @return calc(($value * 100vw) / 360);
+}
+
+@media #{$lg1700P} {
+}
+@media #{$desktop1699M} {
+}
+@media #{$laptop1279M} {
+}
+@media #{$tablet1099M} {
+}
+@media #{$tablet1023M} {
+}
+@media #{$mobile700M} {
+}

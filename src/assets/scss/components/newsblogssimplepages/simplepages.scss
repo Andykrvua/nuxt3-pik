@@ -1,0 +1,155 @@
+.simple-pages {
+  &__content {
+    .text-title {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 22px;
+      @media #{$mobile700M} {
+        font-weight: 700;
+        line-height: 24px;
+      }
+    }
+
+    .text-title + .text-p {
+      margin-top: 28px;
+      @media #{$mobile700M} {
+        margin-top: 44px;
+      }
+    }
+
+    .text-title + .text-ul {
+      margin-top: 28px;
+    }
+
+    .text-p + .text-title,
+    .text-ul + .text-title {
+      padding-top: 52px;
+      @media #{$mobile700M} {
+        padding-top: 44px;
+      }
+    }
+
+    .text-p + .text-ul {
+      margin-top: 20px;
+    }
+
+    .text-p {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .text-p + .text-p {
+      margin-top: 24px;
+    }
+
+    .text-ul {
+      margin-left: 18px;
+      list-style: disc;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 32px;
+    }
+
+    hr {
+      margin-block: 33px;
+    }
+  }
+}
+
+.simple-pages.delivery {
+  .address-block {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 48px;
+    @media #{$laptop1279M} {
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    &.first {
+      margin-top: 32px;
+      @media #{$mobile700M} {
+        margin-top: 44px;
+      }
+    }
+
+    &__title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      &__text {
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 22px;
+      }
+
+      svg {
+        flex-shrink: 0;
+        color: var(--color-accent);
+      }
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+
+      p:not(.address-block__content__title),
+      a {
+        font-size: 16px;
+        line-height: 24px;
+      }
+
+      &__title {
+        margin-bottom: 12px;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 16px;
+        color: var(--text-dark-grey);
+      }
+
+      &__phonetime {
+        display: flex;
+        gap: 48px;
+        margin-top: 32px;
+        @media #{$mobile700M} {
+          flex-direction: column;
+          gap: 28px;
+        }
+      }
+
+      &__phone,
+      &__time {
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0;
+        @media #{$mobile700M} {
+          width: 170px;
+        }
+
+        a + a,
+        p:not(.address-block__content__title) + p {
+          margin-top: 8px;
+        }
+      }
+
+      &__time {
+        min-width: 170px;
+
+        p {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        span {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  hr:last-child {
+    display: none;
+  }
+}

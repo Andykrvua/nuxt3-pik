@@ -1,0 +1,81 @@
+.auth {
+  &__register {
+    .input.base {
+      margin-bottom: 24px;
+    }
+
+    .checkbox {
+      gap: 4px;
+      margin-bottom: 24px;
+    }
+
+    .collapse-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__cancel-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 16px;
+      button {
+        font-size: 14px;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .btn-buy {
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  &__login {
+    display: flex;
+    flex-direction: column;
+
+    & > div,
+    & .change-passw {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .btn-buy {
+      margin-top: 16px;
+    }
+
+    span {
+      margin-block: 8px;
+      text-align: center;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    .btn-social {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 8px;
+      font-size: 14px;
+      background-color: var(--lightgrey-bg);
+      &[disabled] {
+        opacity: 0.8;
+      }
+    }
+
+    .btn-restore-pass {
+      margin-top: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 18px;
+    }
+
+    .forgot-pass {
+      font-size: 14px;
+      text-decoration: underline;
+    }
+  }
+}

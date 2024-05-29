@@ -1,0 +1,38 @@
+.header__search {
+  display: flex;
+  flex-grow: 1;
+  max-width: 500px;
+  @media #{$tablet1099M} {
+    flex-grow: 0;
+  }
+
+  .btn-open-search {
+    display: none;
+    @media #{$tablet1099M} {
+      display: block;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-grow: 1;
+    @media #{$tablet1099M} {
+      display: none;
+    }
+  }
+
+  .input.main-search {
+    display: flex;
+    flex-grow: 1;
+  }
+
+  .input__wrapper {
+    display: flex;
+    flex-grow: 1;
+  }
+
+  input {
+    max-width: 100%;
+    min-width: 100px;
+  }
+}

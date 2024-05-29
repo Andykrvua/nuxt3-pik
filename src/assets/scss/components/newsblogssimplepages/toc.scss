@@ -1,0 +1,115 @@
+.toc {
+  margin-bottom: 52px;
+
+  &__title {
+    margin-bottom: 24px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 27px;
+  }
+
+  .toc__link {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+  }
+
+  &__firstlevel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    counter-reset: my-counter;
+    @media #{$mobile700M} {
+      gap: 16px;
+    }
+
+    & > li {
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      counter-increment: my-counter;
+      @media #{$mobile700M} {
+        justify-content: space-between;
+      }
+
+      &::before {
+        content: counter(my-counter);
+        display: inline-block;
+        flex-shrink: 0;
+        width: 36px;
+        margin-right: 16px;
+        padding-right: 8px;
+        border-top-right-radius: 12px;
+        border-bottom-right-radius: 12px;
+        text-align: right;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 24px;
+        background-color: var(--lightgrey-bg);
+        color: var(--color-accent);
+      }
+
+      & a {
+        max-width: 65%;
+        @media #{$mobile700M} {
+          margin-right: auto;
+        }
+      }
+    }
+
+    ol {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 100%;
+      gap: 16px;
+      margin-left: calc(40px + 36px);
+      transition: height var(--base-tr);
+      overflow: hidden;
+      @media #{$mobile700M} {
+        margin-bottom: 0;
+        margin-left: calc(32px + 36px);
+      }
+
+      li:first-child {
+        margin-top: 12px;
+      }
+      li:last-child {
+        margin-bottom: 4px;
+      }
+
+      &.close {
+        height: 0;
+      }
+
+      &.open {
+        height: var(--height);
+      }
+
+      .toc__link {
+        font-weight: 400;
+        line-height: 19px;
+      }
+    }
+  }
+
+  &__collapse-btn {
+    padding-left: 20px;
+    font-size: 0;
+
+    svg {
+      transition: transform var(--base-tr);
+    }
+
+    &.open {
+      svg {
+        transform: rotate(270deg);
+      }
+    }
+
+    &.close {
+      svg {
+        transform: rotate(90deg);
+      }
+    }
+  }
+}

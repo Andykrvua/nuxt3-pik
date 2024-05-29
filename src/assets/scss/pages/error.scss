@@ -1,0 +1,17 @@
+.error-page-404 {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  height: 100vh;
+
+  .status-code {
+    color: var(--color-accent);
+    font-size: 36px;
+    font-weight: 800;
+  }
+
+  .status-text {
+    padding-block: 16px;
+    font-size: 22px;
+  }
+}

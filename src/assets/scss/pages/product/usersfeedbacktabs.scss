@@ -1,0 +1,6 @@
+.product-users-feedback-tabs {
+  margin-top: 120px;
+  @media #{$mobile700M} {
+    margin-top: 60px;
+  }
+}

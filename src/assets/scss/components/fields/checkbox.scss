@@ -1,0 +1,134 @@
+.checkbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 24px;
+  cursor: pointer;
+
+  input {
+    display: none;
+    width: initial;
+    height: initial;
+    margin-bottom: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  &__check {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3px;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--text-primary);
+    border-radius: 4px;
+  }
+
+  input:checked + .checkbox__check::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    background-color: var(--text-dark-grey);
+  }
+}
+
+.checkbox.sheet-count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+
+  .checkbox__check {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    width: auto;
+    height: auto;
+    border: 1px solid var(--lightgrey-bg);
+    border-radius: 0;
+  }
+
+  input:checked + .checkbox__check {
+    border: 1px solid var(--color-accent);
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.checkbox.sheet-format {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 80px;
+  padding-inline: 20px;
+
+  .checkbox__check {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    width: auto;
+    height: auto;
+    border: 1px solid var(--lightgrey-bg);
+    border-radius: 0;
+  }
+
+  input:checked + .checkbox__check {
+    border: 1px solid var(--color-accent);
+
+    &::after {
+      display: none;
+    }
+  }
+
+  span:not(.checkbox__check) {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 14px;
+
+    span {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 11px;
+      font-weight: 400;
+      line-height: 12px;
+      color: var(--text-dark-grey);
+    }
+  }
+}
+
+.radio {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  font-size: 16rem;
+  line-height: 150%;
+  color: var(--text);
+  input {
+    display: none;
+  }
+  &:hover {
+    color: var(--text);
+  }
+  input:checked + .radio__check {
+    background-color: var(--primary);
+  }
+  &__check {
+    width: 20rem;
+    height: 20rem;
+    transition: all 0.3s ease-in-out;
+    border: 1rem solid var(--border);
+    border-radius: 50%;
+  }
+}

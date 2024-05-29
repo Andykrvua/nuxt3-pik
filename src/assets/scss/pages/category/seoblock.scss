@@ -1,0 +1,36 @@
+.seo-block {
+  margin-top: 84px;
+  color: var(--text-dark-grey);
+  @media #{$mobile700M} {
+    margin-top: 40px;
+  }
+
+  .title,
+  h3,
+  h4 {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    margin-bottom: 24px;
+    @media #{$mobile700M} {
+      margin-bottom: 22px;
+    }
+  }
+
+  p {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+  }
+
+  p + p {
+    margin-top: 12px;
+  }
+
+  .read-more-collaps {
+    margin-top: 20px;
+    @media #{$mobile700M} {
+      margin-bottom: 22px;
+    }
+  }
+}

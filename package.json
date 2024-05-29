@@ -1,0 +1,46 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "engines": {
+    "node": "^18.18.0"
+  },
+  "overrides": {
+    "vue": "latest"
+  },
+  "devDependencies": {
+    "@nuxtjs/google-fonts": "^3.2.0",
+    "@nuxtjs/i18n": "^8.3.0",
+    "nuxt": "^3.11.2",
+    "sass": "^1.75.0"
+  },
+  "dependencies": {
+    "@nuxt/image": "^1.5.0",
+    "@nuxtjs/color-mode": "^3.4.0",
+    "@pinia/nuxt": "^0.5.1",
+    "@vee-validate/nuxt": "^4.12.6",
+    "@vee-validate/yup": "^4.12.6",
+    "@vueuse/nuxt": "^10.9.0",
+    "maska": "^2.1.11",
+    "nuxt-swiper": "^1.2.2",
+    "nuxt-vue3-google-signin": "^0.0.11",
+    "pinia": "^2.1.7",
+    "vee-validate": "^4.12.6",
+    "vue-awesome-paginate": "^1.1.46",
+    "vue-select": "^4.0.0-beta.5",
+    "yup": "^1.4.0"
+  },
+  "browserslist": [
+    "> 0.5%",
+    "last 3 versions",
+    "not ie <= 11",
+    "not dead",
+    "not op_mini all"
+  ]
+}

@@ -1,0 +1,41 @@
+.select {
+  --vs-border-color: var(--lightgrey-bg);
+  --vs-dropdown-box-shadow: none;
+  --vs-border-radius: 0;
+  --vs-selected-color: var(--text-primary);
+  --vs-line-height: 22px;
+  width: 260px;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  @media #{$mobile700M} {
+    width: 177px;
+    font-size: 13px;
+  }
+
+  .vs__selected-options .vs__selected {
+    @media #{$mobile700M} {
+      height: 24px;
+      margin-top: 5px;
+    }
+  }
+
+  .default-select__wrapper .vs__dropdown-toggle {
+    height: 44px;
+    background-color: var(--lightgrey-bg);
+    @media #{$mobile700M} {
+      height: 36px;
+    }
+  }
+
+  .vs--single.vs--open .vs__selected {
+    position: relative;
+    opacity: 1;
+  }
+
+  .icon-svg-arrow-right {
+    margin-top: 5px;
+    transform: rotate(90deg);
+  }
+}

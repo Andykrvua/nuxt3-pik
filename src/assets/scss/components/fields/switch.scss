@@ -1,0 +1,46 @@
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 25rem;
+  height: 14rem;
+  &__slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1rem solid var(--border);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    width: 25rem;
+    height: 14rem;
+    box-sizing: content-box;
+    &:before {
+      position: absolute;
+      content: "";
+      height: 12rem;
+      width: 12rem;
+      left: 1rem;
+      bottom: 1rem;
+      background-color: var(--text);
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+    }
+    &.round {
+      border-radius: 34rem;
+    }
+
+    &.round:before {
+      border-radius: 50%;
+    }
+  }
+  input {
+    display: none;
+    &:checked + .switch__slider:before {
+      -webkit-transform: translateX(11rem);
+      -ms-transform: translateX(11rem);
+      transform: translateX(11rem);
+    }
+  }
+}

@@ -1,0 +1,120 @@
+.input {
+  position: relative;
+
+  &__wrapper {
+    position: relative;
+  }
+
+  input {
+    width: 100%;
+    border: 1px solid var(--lightgrey-bg);
+    font-size: 14px;
+
+    &::placeholder {
+      color: var(--text-dark-grey);
+    }
+
+    &:disabled {
+      &::placeholder {
+        color: var(--text-dark-grey);
+      }
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-50%);
+    &.withlabel {
+      --label-width: 26px;
+      top: calc(50% + (var(--label-width) / 2));
+    }
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s,
+      color 5000s ease-in-out 0s;
+  }
+
+  input:-internal-autofill-selected {
+    color: var(--text-primary) !important;
+    background-color: var(--base-bg) !important;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    margin: 0;
+    -webkit-appearance: none;
+  }
+
+  /* Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  & .error {
+    padding-top: 4px;
+    font-size: 14px;
+    color: var(--color-accent);
+  }
+
+  &:has(input[name^="pass"]) &__icon {
+    cursor: pointer;
+  }
+}
+
+.input.main-search {
+  input {
+    height: 54px;
+    padding: 17px 16px;
+  }
+}
+
+.input.base {
+  .input__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .input__label {
+    font-size: 13px;
+    line-height: 18px;
+    cursor: pointer;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:active,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:hover {
+    font-size: 16px;
+    -webkit-box-shadow: inset 0 0 0 30px var(--lightgrey-bg);
+  }
+
+  input {
+    padding: 10px 16px;
+    border-radius: 0;
+    font-size: 16px;
+    background-color: var(--lightgrey-bg);
+  }
+}
+
+.input.base-review {
+  .input__wrapper {
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--lightgrey-bg);
+  }
+
+  .input__label {
+    flex-shrink: 0;
+    padding-left: 24px;
+  }
+}

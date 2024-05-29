@@ -1,0 +1,266 @@
+.contacts {
+  &__title {
+    margin-top: 36px;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+    @media #{$mobile700M} {
+      margin-top: 16px;
+      font-size: 24px;
+      line-height: 32.78px;
+    }
+  }
+
+  &__hero {
+    display: flex;
+    margin-top: 62px;
+    background-color: var(--lightgrey-bg);
+    @media #{$tablet1099M} {
+      flex-wrap: wrap;
+    }
+    @media #{$mobile700M} {
+      margin-top: 20px;
+    }
+
+    &__item {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      flex-basis: 25%;
+      padding: 46px 40px 44px;
+      text-align: center;
+      text-wrap: balance;
+      @media #{$tablet1099M} {
+        flex-basis: 50%;
+      }
+
+      @media #{$mobile700M} {
+        flex-basis: 100%;
+        padding: 16px 24px 30px;
+        border-bottom: 2px solid var(--white);
+      }
+
+      &__title {
+        margin-bottom: 16px;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 24px;
+      }
+
+      &__text {
+        font-size: 16px;
+        line-height: 22px;
+      }
+
+      &__text + &__text {
+        margin-top: 8px;
+      }
+
+      &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        height: 60px;
+        margin-bottom: 12px;
+        border: 1px solid var(--lightgrey-bg);
+        border-radius: 50%;
+        background-color: var(--white);
+        @media #{$notmobile701P} {
+          position: absolute;
+          top: -30px;
+          left: calc(50% - 30px);
+          margin-bottom: 0;
+        }
+        @media #{$tablet1099M} {
+          top: -15px;
+        }
+
+        svg {
+          color: var(--color-accent);
+        }
+      }
+    }
+
+    &__item:first-child,
+    &__item:last-child {
+      .contacts__hero__item__title {
+        margin-top: 12px;
+        margin-bottom: 28px;
+        @media #{$mobile700M} {
+          margin-top: 0;
+          margin-bottom: 22px;
+        }
+      }
+    }
+
+    &__item:first-child {
+      padding-bottom: 20px;
+
+      .contacts__hero__item__title {
+        @media #{$mobile700M} {
+          margin-bottom: 12px;
+        }
+      }
+    }
+  }
+
+  &__tabs {
+    margin-top: 76px;
+    @media #{$mobile700M} {
+      margin-top: 52px;
+    }
+
+    .tabs__content {
+      padding: 52px 0 0;
+      @media #{$mobile700M} {
+        padding: 24px 0 0;
+      }
+    }
+  }
+
+  .purchasing-dep {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 60px;
+    @media #{$mobile700M} {
+      grid-template-columns: 1fr;
+    }
+
+    &__leftcolumn {
+      &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 72px;
+        @media #{$mobile700M} {
+          gap: 36px;
+        }
+
+        &__item {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+
+          p,
+          a {
+            font-size: 16px;
+            line-height: 22px;
+          }
+
+          a[href^="tel:"] {
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+
+  #stores {
+    scroll-margin-top: 180px;
+  }
+
+  .stores {
+    display: grid;
+    grid-template-columns: 496px 1fr;
+    gap: 64px;
+    @media #{$tablet1099M} {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+    @media #{$mobile700M} {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+    &__map {
+      .gmap {
+        height: 520px;
+      }
+    }
+
+    .store-select {
+      width: auto;
+      margin-bottom: 40px;
+      @media #{$mobile700M} {
+        margin-bottom: 33px;
+      }
+    }
+  }
+}
+
+.stores-block-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 32px;
+  @media #{$mobile700M} {
+    margin-bottom: 28px;
+  }
+
+  .title {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+  }
+
+  svg {
+    flex-shrink: 0;
+    color: var(--color-accent);
+  }
+}
+
+.stores-address {
+  &__title {
+    margin-bottom: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    color: var(--text-dark-grey);
+  }
+
+  a {
+    display: block;
+  }
+
+  p:not(.stores-address__title) {
+    font-size: 16px;
+    line-height: 24px;
+
+    span {
+      font-weight: 700;
+    }
+
+    &:has(span) {
+      display: flex;
+      justify-content: space-between;
+      width: 175px;
+    }
+  }
+
+  p + .stores-address__title,
+  a + .stores-address__title {
+    margin-top: 32px;
+    @media #{$mobile700M} {
+      margin-top: 28px;
+    }
+  }
+
+  a + a,
+  p:not(.stores-address__title) + p:not(.stores-address__title) {
+    margin-top: 8px;
+  }
+
+  &__link {
+    margin-top: 32px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 22px;
+    color: var(--color-accent);
+    @media #{$mobile700M} {
+      margin-top: 28px;
+    }
+  }
+}

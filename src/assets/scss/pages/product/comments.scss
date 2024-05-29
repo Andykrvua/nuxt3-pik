@@ -1,0 +1,226 @@
+.comments-block {
+  display: grid;
+  grid-template-columns: 6fr 4fr;
+  gap: var(--base-padding);
+  @media #{$lg1700P} {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media #{$tablet1099M} {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  @media #{$mobile700M} {
+    gap: 32px;
+  }
+
+  &__items {
+    overflow: hidden;
+  }
+
+  &:has(.no-comments) {
+    align-items: center;
+  }
+
+  .no-comments {
+    p {
+      max-width: 470px;
+      font-size: 18px;
+      line-height: 32px;
+      @media #{$mobile700M} {
+        font-size: 14px;
+        line-height: 22px;
+      }
+    }
+    .title {
+      margin-bottom: 12px;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 28px;
+      @media #{$mobile700M} {
+        font-size: 14px;
+        line-height: 24px;
+      }
+    }
+  }
+
+  &__controls {
+    .title {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 28px;
+      margin-bottom: 20px;
+      @media #{$mobile700M} {
+        font-size: 16px;
+      }
+    }
+
+    .btn-star + .btn-star {
+      margin-left: 4px;
+    }
+
+    .btn-star {
+      min-height: 32px;
+
+      &.btn-star-small {
+        min-width: 18px;
+        min-height: 18px;
+      }
+    }
+
+    .btn-star.active {
+      .icon-svg-star {
+        fill: var(--text-primary);
+        stroke: var(--text-primary);
+      }
+    }
+
+    .btn-star.hovered {
+      .icon-svg-star {
+        fill: var(--text-primary);
+        stroke: var(--text-primary);
+      }
+    }
+
+    .icon-svg-star {
+      fill: transparent;
+      stroke: var(--star-inactive);
+      transition: fill var(--base-tr), stroke var(--base-tr);
+    }
+
+    &__header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+
+      .subtitle {
+        margin-left: 12px;
+        font-size: 13px;
+        line-height: 18px;
+
+        &.error {
+          color: var(--color-accent);
+        }
+      }
+
+      .remove-reply {
+        margin-left: 0;
+        text-align: left;
+        font-size: 13px;
+        line-height: 18px;
+      }
+    }
+
+    .no-logged {
+      text-align: center;
+
+      .title {
+        margin-top: 24px;
+        margin-bottom: 26px;
+        @media #{$mobile700M} {
+          margin-top: 16px;
+          margin-bottom: 16px;
+        }
+      }
+
+      .btn-accent {
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+.comments {
+  @media #{$mobile700M} {
+    gap: 32px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    li {
+      .comments__list {
+        gap: 24px;
+        margin-top: 24px;
+        margin-left: 20px;
+        padding-left: 20px;
+        border-left: 1px solid var(--lightgrey-bg);
+        @media #{$mobile700M} {
+          margin-left: 12px;
+          padding-left: 12px;
+        }
+
+        .comments__list {
+          .comments__list {
+            .comments__list {
+              margin-left: 0;
+              padding-left: 0;
+              border-left: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .icon-svg-star {
+    fill: transparent;
+    stroke: currentColor;
+
+    &.active {
+      fill: var(--text-primary);
+      stroke: var(--text-primary);
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 12px;
+
+    &__stars {
+      display: flex;
+      align-items: baseline;
+      margin-right: 12px;
+    }
+
+    &__name {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 28px;
+      @media #{$mobile700M} {
+        font-size: 14px;
+        line-height: 22px;
+      }
+    }
+
+    &__date {
+      margin-left: auto;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+      color: var(--text-dark-grey);
+    }
+  }
+
+  &__body {
+    font-size: 18px;
+    line-height: 32px;
+    @media #{$mobile700M} {
+      font-size: 16px;
+      line-height: 26px;
+    }
+  }
+
+  &__reply {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-accent);
+  }
+}

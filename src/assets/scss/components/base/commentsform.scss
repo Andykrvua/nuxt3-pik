@@ -1,0 +1,15 @@
+.comments-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__helper {
+    position: relative;
+
+    .btn-comment {
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+    }
+  }
+}

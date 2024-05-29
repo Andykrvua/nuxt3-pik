@@ -1,0 +1,143 @@
+.drawer {
+  visibility: hidden;
+
+  &__overlay {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    opacity: 0;
+    background-color: var(--black);
+    transition-property: opacity;
+    user-select: none;
+  }
+
+  &__content__wrapper {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    max-width: 384px;
+    width: 100%;
+    height: 100%;
+    min-height: 100svh;
+    transform: translateX(-100%);
+    background-color: var(--base-bg);
+    overflow-y: auto;
+    transition-property: transform;
+    @media #{$mobile700M} {
+      max-width: 312px;
+    }
+
+    &.left {
+      left: 0;
+      transform: translateX(-100%);
+    }
+
+    &.right {
+      right: 0;
+      transform: translateX(100%);
+    }
+  }
+
+  &.is-visible {
+    visibility: visible;
+  }
+
+  &.is-open {
+    .drawer__overlay {
+      opacity: 0.4;
+    }
+
+    .drawer__content__wrapper {
+      transform: translateX(0);
+    }
+  }
+}
+
+.burger__drawer {
+  &.is-open {
+    .drawer__overlay {
+      opacity: 0;
+    }
+  }
+
+  .drawer__content__wrapper {
+    top: var(--header-height);
+    height: calc(100% - var(--header-height));
+    min-height: calc(100svh - var(--header-height));
+    @media #{$mobile700M} {
+      top: 0;
+      max-width: 100%;
+      height: 100%;
+      min-height: 100svh;
+    }
+  }
+}
+
+.filter__drawer {
+  .drawer__overlay {
+    opacity: 0;
+    z-index: var(--z-modal);
+  }
+
+  .drawer__content__wrapper {
+    max-width: 312px;
+    z-index: var(--z-modal-content);
+  }
+}
+
+.drawer.mobile-only {
+  @media #{$tablet910P} {
+    visibility: unset;
+  }
+
+  .drawer__overlay {
+    @media #{$tablet910P} {
+      position: relative;
+      inset: unset;
+      width: 0;
+      height: 0;
+      background-color: var(--base-bg);
+    }
+  }
+
+  .drawer__content__wrapper {
+    @media #{$tablet910P} {
+      position: relative;
+      top: auto;
+      bottom: auto;
+      max-width: unset;
+      min-height: unset;
+      transform: translateX(0);
+      background-color: var(--base-bg);
+      z-index: auto;
+    }
+  }
+}
+
+.cart__drawer {
+  // &.is-open {
+  //   .drawer__overlay {
+  //     opacity: 0;
+  //   }
+  // }
+
+  .btn-close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    z-index: 1;
+  }
+
+  &__title {
+    padding: 68px 40px 6px;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 38px;
+  }
+
+  .drawer__content__wrapper {
+    max-width: 568px;
+  }
+}

@@ -1,0 +1,90 @@
+.range-slider-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  .range-slider-base-inputs {
+    margin-bottom: 17px;
+    display: flex;
+    align-items: center;
+
+    .input {
+      input {
+        width: 85px;
+        height: 32px;
+        padding-inline: 8px;
+        border: 1px solid rgba(244, 244, 244, 1);
+        background-color: rgba(244, 244, 244, 1);
+      }
+    }
+  }
+
+  .range-slider {
+    width: 180px;
+    height: 42px;
+    margin-left: 12px;
+
+    &__control {
+      position: relative;
+      top: 20px;
+      min-height: 20px;
+    }
+
+    &__values {
+      display: flex;
+
+      &__from,
+      &__to {
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 24px;
+      }
+
+      &__to {
+        margin-left: 80px;
+      }
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      width: 25px;
+      height: 50px;
+      border: none;
+      background-color: var(--white);
+      background-image: url("/images/range-two-val/pencil.svg");
+      background-position: center -1px;
+      background-repeat: no-repeat;
+      cursor: pointer;
+      pointer-events: all;
+      -webkit-appearance: none;
+      box-shadow: none;
+    }
+
+    input[type="range"]::-moz-range-thumb {
+      width: 25px;
+      height: 50px;
+      border: none;
+      background-color: var(--white);
+      background-image: url("/images/range-two-val/pencil.svg");
+      background-position: center -1px;
+      background-repeat: no-repeat;
+      cursor: pointer;
+      pointer-events: all;
+      -webkit-appearance: none;
+    }
+
+    input[type="range"] {
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      appearance: none;
+      -webkit-appearance: none;
+      pointer-events: none;
+    }
+
+    #fromSlider {
+      top: 2px;
+      height: 0;
+      z-index: 1;
+    }
+  }
+}

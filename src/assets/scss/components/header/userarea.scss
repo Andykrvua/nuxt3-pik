@@ -1,0 +1,45 @@
+.header .user-area {
+  --gap: 24px;
+  @media #{$mobile700M} {
+    --gap: 16px;
+  }
+  display: flex;
+  flex-shrink: 0;
+  gap: var(--gap);
+  margin-left: auto;
+
+  .btn-shopping-cart {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 16px;
+
+    &-texts {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      @media #{$mobile700M} {
+        display: none;
+      }
+    }
+
+    & .badge {
+      right: unset;
+      left: 20px;
+    }
+  }
+
+  .btn-shopping-cart svg,
+  .btn-favorite svg {
+    @media #{$mobile700M} {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .btn-person {
+    @media #{$tablet1023M} {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,79 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
+  scrollbar-gutter: stable;
+}
+
+body {
+  min-width: 360px;
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  font-optical-sizing: auto;
+  color: var(--text-primary);
+}
+
+@media (any-hover: hover) {
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--text-dark-grey);
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: var(--lightgrey-bg);
+  }
+
+  @supports (-moz-appearance: none) {
+    html {
+      scrollbar-width: thin;
+      scrollbar-color: var(--text-dark-grey) var(--lightgrey-bg);
+    }
+  }
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100vh;
+}
+
+.page {
+  flex: 1 0 auto;
+}
+
+.container,
+.container-small,
+.container-slider {
+  width: 100%;
+  max-width: var(--container);
+  margin-right: auto;
+  margin-left: auto;
+  padding-inline: var(--base-padding);
+}
+
+.container-small {
+  padding-inline: var(--base-small-padding);
+}
+
+.container-slider {
+  @media #{$mobile700M} {
+    padding-inline: 0;
+  }
+}
+
+.my-enter-active,
+.my-leave-active {
+  transition: opacity var(--base-tr);
+}
+
+.my-enter,
+.my-leave-active {
+  opacity: 0;
+}

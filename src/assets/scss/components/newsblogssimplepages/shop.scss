@@ -1,0 +1,24 @@
+.shop-pages {
+  &__title {
+    margin-top: 36px;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+    @media #{$mobile700M} {
+      margin-top: 16px;
+      font-size: 24px;
+      line-height: 33px;
+    }
+  }
+
+  &__layout {
+    display: grid;
+    grid-template-columns: 390px 1fr;
+    column-gap: 110px;
+    margin-top: 50px;
+    @media #{$tablet909M} {
+      grid-template-columns: 1fr;
+      row-gap: 50px;
+    }
+  }
+}

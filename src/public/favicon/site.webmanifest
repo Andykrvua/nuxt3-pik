@@ -1,0 +1,21 @@
+{
+  "name": "Час-Пік",
+  "short_name": "Час-Пік",
+  "start_url": "https://chaspik.ua/",
+  "icons": [
+    {
+      "src": "/favicon/android-chrome-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon/safari-pinned-tab.svg",
+      "sizes": "233x233",
+      "type": "image/svg",
+      "purpose": "maskable"
+    }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}
